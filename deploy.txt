@@ -1,0 +1,3 @@
+cd /opt
+git clone https://go.googlesource.com/go
+cd go

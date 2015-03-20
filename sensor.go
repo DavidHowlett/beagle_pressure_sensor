@@ -1,25 +1,12 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
+import "github.com/kidoman/embd"
 
 func main() {
-	fmt.Println(time.Now())
-	/*
-		ch := make(chan int,1000)
-		go sender(ch)
-		for i := 0; i < 100000; i++ {
-			ch <- i
-		}
-		close(ch)
-	*/
-}
-
-func sender(ch chan int) {
-	for pressure := range ch {
-		fmt.Println(pressure)
-	}
-	return
+	fmt.Print("It finished")
+	//embd.InitLED()
+	//defer embd.CloseLED()
+	//embd.ToggleLED(3)
+	fmt.Print("It finished")
 }
