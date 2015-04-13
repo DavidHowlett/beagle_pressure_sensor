@@ -1,12 +1,22 @@
 package main
 
-import "fmt"
-import "github.com/kidoman/embd"
+import (
+	//"time"
+	"fmt"
+	"github.com/kidoman/embd"
+)
 
 func main() {
-	fmt.Print("It finished")
-	//embd.InitLED()
-	//defer embd.CloseLED()
-	//embd.ToggleLED(3)
-	fmt.Print("It finished")
+	bus := embd.NewI2CBus(1)
+	for {
+		print("foo\n")
+		x, err := bus.ReadByte(0x78)
+		fmt.Print(x)
+		fmt.Print(err)
+        fmt.Print(embd.DetectHost())
+		//embd.LEDToggle("LED0")
+		//time.Sleep(2000 * time.Millisecond)
+
+	}
+
 }
